@@ -3,7 +3,7 @@ Ansible role: Docker-Pi
 
 [![Build Status](https://travis-ci.org/Benaud12/docker-pi.svg?branch=master)](https://travis-ci.org/Benaud12/docker-pi)
 
-Ansible role for Docker installation on a Raspberry Pi.
+###**Ansible role for Docker installation on a Raspberry Pi**
 
 Requirements
 ------------
