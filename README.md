@@ -45,7 +45,7 @@ docker_pi_hub_email: ""
 
 ####Users:
 
-List all users that need to be added to the docker group under the `docker_pi_group_users` variable. Users need to already exist on the machine.
+List all users that need to be added to the docker group under the `docker_pi_group_users` variable. Users must already exist on the machine.
 
 ```yml
 # defaults/main.yml
@@ -63,13 +63,13 @@ Example Playbook
 
 Basic installation, without login to Docker hub or adding additional 'docker' users:
 
-    - hosts: servers
+    - hosts: raspberry-pi
       roles:
         - role: Benaud12.docker-pi
 
 Install with login and additional users:
 
-    - hosts: servers
+    - hosts: raspberry-pi
       roles:
         - role: Benaud12.docker-pi
           docker_pi_user: mick.dundee
@@ -80,3 +80,4 @@ Install with login and additional users:
             - mick.dundee
             - sue.charlton
             - donk
+            - pi
