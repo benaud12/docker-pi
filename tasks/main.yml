@@ -1,2 +1,11 @@
 ---
-# tasks file for docker-pi
+- include: install.yml
+
+- include: users.yml
+  when: "{{ docker_pi_group_users.length > 0 }}"
+
+- include: login.yml
+  when:
+    - "{{ docker_pi_hub_username }}"
+    - "{{ docker_pi_hub_password }}"
+    - "{{ docker_pi_hub_email }}"

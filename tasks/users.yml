@@ -1,0 +1,6 @@
+---
+- name: Add docker_pi_group_users to the docker group
+  user:
+    name: "{{ item }}"
+    groups: docker
+  with_items: "{{ docker_pi_group_users }}"

@@ -1,0 +1,7 @@
+---
+- name: Login to docker hub
+  docker_login:
+    username: "{{ docker_pi_hub_username }}"
+    password: "{{ docker_pi_hub_password }}"
+    email: "{{ docker_pi_hub_email }}"
+  become_user: "{{ docker_pi_user }}"

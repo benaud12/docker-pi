@@ -1,4 +1,4 @@
-Docker-Pi : Ansible Role
+Ansible role: Docker-Pi
 =========
 
 Ansible role for Docker installation on a Raspberry Pi.
@@ -6,34 +6,75 @@ Ansible role for Docker installation on a Raspberry Pi.
 Requirements
 ------------
 
-Assumes Raspbian OS has been set up.
-Raspbian Jessie Lite can be downloaded from here https://www.raspberrypi.org/downloads/raspbian/
+Assumes Raspbian OS or equivalent.
+
+Raspbian Jessie Lite can be downloaded from here <https://www.raspberrypi.org/downloads/raspbian>
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+###Varaibles are shown below along with their default values
+
+####Install:
+
+All tasks are run with privilege escalation by default. As per the [Ansible documentation](http://docs.ansible.com/ansible/become.html) `become_user` defaults to the root user, so installation will be run as root by default.
+
+```yml
+# vars/main.yml
+
+become: yes
+```
+
+####Login:
+
+The [Docker Hub](https://hub.docker.com/) username, password and email are all required for login. The task will be skipped if any are missing.
+
+This is also run as the root user by default. If a specific user needs to be logged in, register this under the `docker_pi_user` variable.
+
+```yml
+# defaults/main.yml
+
+docker_pi_user: root
+
+docker_pi_hub_username:
+docker_pi_hub_password:
+docker_pi_hub_email:
+```
+
+####Users:
+
+List all users that need to be added to the docker group under the `docker_pi_group_users` variable. Users need to already exist on the machine.
+
+```yml
+# defaults/main.yml
+
+docker_pi_group_users: []
+```
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+No dependencies on other Ansible roles.
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Basic installation, without login to Docker hub or adding additional 'docker' users:
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+        - role: benaud12.docker-pi
 
-License
--------
+Install with login and additional users:
 
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+    - hosts: servers
+      roles:
+        - role: benaud12.docker-pi
+          docker_pi_user: mick.dundee
+          docker_pi_hub_username: croc_killer123
+          docker_pi_hub_password: knifeySpoony
+          docker_pi_hub_email: mick@australia.com
+          docker_pi_group_users:
+            - mick.dundee
+            - sue.charlton
+            - donk
