@@ -2,7 +2,7 @@
 - include: install.yml
 
 - include: users.yml
-  when: "{{ docker_pi_group_users.length > 0 }}"
+  when: "{{ docker_pi_group_users|length > 0 }}"
 
 - include: login.yml
   when:
