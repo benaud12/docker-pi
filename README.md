@@ -63,13 +63,13 @@ Basic installation, without login to Docker hub or adding additional 'docker' us
 
     - hosts: servers
       roles:
-        - role: benaud12.docker-pi
+        - role: Benaud12.docker-pi
 
 Install with login and additional users:
 
     - hosts: servers
       roles:
-        - role: benaud12.docker-pi
+        - role: Benaud12.docker-pi
           docker_pi_user: mick.dundee
           docker_pi_hub_username: croc_killer123
           docker_pi_hub_password: knifeySpoony
