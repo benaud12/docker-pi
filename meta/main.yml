@@ -13,7 +13,7 @@ galaxy_info:
   # - GPLv3
   # - Apache
   # - CC-BY
-  license: license (GPLv2, CC-BY, etc)
+  license: Apache
 
   min_ansible_version: 1.2
 
@@ -30,7 +30,7 @@ galaxy_info:
   # the ones that apply to your role. If you don't see your
   # platform on this list, let us know and we'll get it added!
   #
-  #platforms:
+  platforms:
   #- name: OpenBSD
   #  versions:
   #  - all
@@ -141,11 +141,11 @@ galaxy_info:
   #  - wily
   #  - xenial
   #  - yakkety
-  #- name: Debian
-  #  versions:
+    - name: Debian
+      versions:
   #  - all
   #  - etch
-  #  - jessie
+        - jessie
   #  - lenny
   #  - sid
   #  - squeeze
@@ -207,8 +207,10 @@ galaxy_info:
   #  - Any
 
   galaxy_tags:
-    - Docker
-    - Raspberry Pi
+    - docker
+    - raspberry
+    - pi
+    - container
     # List tags for your role here, one per line. A tag is
     # a keyword that describes and categorizes the role.
     # Users find roles by searching for tags. Be sure to
