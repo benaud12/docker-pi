@@ -38,9 +38,9 @@ This is also run as the root user by default. If a specific user needs to be log
 
 docker_pi_user: root
 
-docker_pi_hub_username:
-docker_pi_hub_password:
-docker_pi_hub_email:
+docker_pi_hub_username: ""
+docker_pi_hub_password: ""
+docker_pi_hub_email: ""
 ```
 
 ####Users:
