@@ -8,4 +8,3 @@
   when:
     - "{{ docker_pi_hub_username|default('') != '' }}"
     - "{{ docker_pi_hub_password|default('') != '' }}"
-    - "{{ docker_pi_hub_email|default('') != '' }}"
