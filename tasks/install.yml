@@ -12,9 +12,6 @@
   file:
     path: /tmp/docker-install.sh
     state: absent
-
+    
 - name: Set Docker to auto-start
-  shell: systemctl enable docker
-
-- name: Start the Docker daemon
-  shell: systemctl start docker
+  service: name=docker enabled=true state=started

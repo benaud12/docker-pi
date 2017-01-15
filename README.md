@@ -29,7 +29,7 @@ become: yes
 
 ####Login:
 
-The [Docker Hub](https://hub.docker.com/) username, password and email are all required for login. The task will be skipped if any are missing.
+The [Docker Hub](https://hub.docker.com/) username, password are required for login. The task will be skipped if any are missing.
 
 This is also run as the root user by default. If a specific user needs to be logged in, register this under the `docker_pi_user` variable.
 
@@ -40,7 +40,6 @@ docker_pi_user: root
 
 docker_pi_hub_username: ""
 docker_pi_hub_password: ""
-docker_pi_hub_email: ""
 ```
 
 ####Users:
@@ -75,7 +74,6 @@ Install with login and additional users:
           docker_pi_user: mick.dundee
           docker_pi_hub_username: croc_killer123
           docker_pi_hub_password: knifeySpoony
-          docker_pi_hub_email: mick@australia.com
           docker_pi_group_users:
             - mick.dundee
             - sue.charlton

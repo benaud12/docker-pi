@@ -5,7 +5,6 @@ docker_pi_user: root
 # Docker hub login details - all three required for login
 docker_pi_hub_username: ""
 docker_pi_hub_password: ""
-docker_pi_hub_email: ""
 
 # List of users to add to docker group
 docker_pi_group_users: []
