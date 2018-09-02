@@ -3,7 +3,7 @@ Ansible role: Docker-Pi
 
 [![Build Status](https://travis-ci.org/Benaud12/docker-pi.svg?branch=master)](https://travis-ci.org/Benaud12/docker-pi)
 
-###**Ansible role for Docker installation on a Raspberry Pi**
+### **Ansible role for Docker installation on a Raspberry Pi**
 
 Requirements
 ------------
@@ -15,9 +15,9 @@ Raspbian Jessie Lite can be downloaded from here <https://www.raspberrypi.org/do
 Role Variables
 --------------
 
-###Varaibles are shown below along with their default values
+### Varaibles are shown below along with their default values
 
-####Install:
+#### Install:
 
 All tasks are run with privilege escalation by default. As per the [Ansible documentation](http://docs.ansible.com/ansible/become.html) `become_user` defaults to the root user, so installation will be run as root by default.
 
@@ -27,7 +27,7 @@ All tasks are run with privilege escalation by default. As per the [Ansible docu
 become: yes
 ```
 
-####Login:
+#### Login:
 
 The [Docker Hub](https://hub.docker.com/) username, password are required for login. The task will be skipped if any are missing.
 
@@ -42,7 +42,7 @@ docker_pi_hub_username: ""
 docker_pi_hub_password: ""
 ```
 
-####Users:
+#### Users:
 
 List all users that need to be added to the docker group under the `docker_pi_group_users` variable. Users must already exist on the machine.
 
